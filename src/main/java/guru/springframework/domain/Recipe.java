@@ -1,10 +1,8 @@
 package guru.springframework.domain;
 
-import com.sun.javafx.beans.IDProperty;
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -52,6 +50,7 @@ public class Recipe {
 
     public Recipe addIngredient(Ingredient ingredient){
         ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
         return this;
     }
 }
