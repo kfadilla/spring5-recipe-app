@@ -15,11 +15,8 @@ import org.springframework.ui.Model;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.*;
-
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -63,10 +60,8 @@ public class IndexControllerTest {
         //when
         String viewName = indexController.showIndex(model);
         assertEquals("index", viewName);
-
-        //then
-        Mockito.verify(recipeService, times(1)).getRecipes();
-        Mockito.verify(model, times(1)).addAttribute(eq("recipes"), argumentCaptor.capture());
+        verify(recipeService, times(1)).getRecipes();
+        verify(model, times(1)).addAttribute(eq("recipes"), argumentCaptor.capture());
         Set<Recipe> setInController = argumentCaptor.getValue();
         assertEquals(2, setInController.size());
     }
