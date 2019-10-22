@@ -57,7 +57,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         Recipe guaRecipe = new Recipe();
         guaRecipe.setPrepTime(10);
-        guaRecipe.setCookTime(0);
+        guaRecipe.setCookTime(3);
         guaRecipe.setDifficulty(Difficulty.EASY);
         guaRecipe.setDirections("1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. Place in a bowl" +
                 "\n" +
